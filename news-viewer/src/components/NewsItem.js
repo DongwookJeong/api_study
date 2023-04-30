@@ -8,7 +8,7 @@ display: flex;
     img {
         display: block;
         width: 160px;
-        height: 160px;
+        height: 100px;
         object-fit: cover;
     }
 }
@@ -35,11 +35,10 @@ display: flex;
 const NewsItem = ({article}) => {
     const { title, description, url, urlToImage}=article;
     return (
-        <NewsItemBlock>
-            {urlToImage &&(
+        <NewsItemBlock> {urlToImage &&(
                 <div className='thumbnail'>
                     <a href={url} target="_blank" rel="noopener noreferrer">
-                    <img src={urlToImage} alt="thumbnail"/>
+                    <img src={urlToImage}alt='thumbnail'/>
                     </a>
                 </div>
             )}
@@ -49,7 +48,9 @@ const NewsItem = ({article}) => {
                         {title}
                     </a>
                 </h2>
-                <p>{description}</p>
+                <p>
+                    {description}
+                </p>
             </div>
         </NewsItemBlock>
     )
