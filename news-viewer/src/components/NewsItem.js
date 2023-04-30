@@ -3,15 +3,16 @@ import styled from 'styled-components'
 const NewsItemBlock = styled.div`
 display: flex;
 
-.thumnail {
+.thumbnail {
     margin-right: 1rem;
     img {
         display: block;
         width: 160px;
-        height: 100px;
+        height: 160px;
         object-fit: cover;
     }
 }
+
 .contents {
     h2 {
         margin: 0;
@@ -35,10 +36,10 @@ const NewsItem = ({article}) => {
     const { title, description, url, urlToImage}=article;
     return (
         <NewsItemBlock>
-            {urlToImage && (
+            {urlToImage &&(
                 <div className='thumbnail'>
                     <a href={url} target="_blank" rel="noopener noreferrer">
-                        <img src={urlToImage} alt="thumbnail"/>
+                    <img src={urlToImage} alt="thumbnail"/>
                     </a>
                 </div>
             )}
@@ -53,5 +54,6 @@ const NewsItem = ({article}) => {
         </NewsItemBlock>
     )
 }
+
 
 export default NewsItem;
